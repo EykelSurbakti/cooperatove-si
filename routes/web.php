@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CostumerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/nasabah/index', [CostumerController::class,'index']);
+
+
+Route::get('/nasabah/showaddres/{param}', [CostumerController::class,'showaddres']);
+
+// student
+
+Route::get('/nasabah/getstudent/{name}/{code}', [CostumerController::class,'getstudent']);
